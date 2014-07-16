@@ -82,8 +82,20 @@ void UtilSweep::on_mainMagnetComboBox_currentIndexChanged(int index)
     case 3: { //Alex Projected field
         if (!lakeshore) {
             lakeshore = new DaqLakeshoreMag();
-
+            lakeshore->set_chan("Dev2/ao0");
         }
+    } break;
+    }
+}
+
+void UtilSweep::on_magSetpointButton_clicked()
+{
+    switch (ui->mainMagnetComboBox->currentIndex()) {
+    case 0: break; //Tabletop
+    case 1: break; //CCMR Projected field
+    case 2: break; //Ralph Projected field
+    case 3: { //Alex Projected field
+        lakeshore->ramp(ui->magSetpointBox->value(),ui->magDeltaBox->value(),ui->magDelayBox->value());
     } break;
     }
 }

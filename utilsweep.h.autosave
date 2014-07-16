@@ -30,6 +30,8 @@ private slots:
 
     void on_mainMagnetComboBox_currentIndexChanged(int index);
 
+    void on_magSetpointButton_clicked();
+    
 private:
     Ui::UtilSweep *ui;
     AgilentSweeper *sweeper;

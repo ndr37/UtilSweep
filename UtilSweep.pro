@@ -18,7 +18,8 @@ SOURCES += main.cpp\
     qcustomplot.cpp \
     lockin7265.cpp \
     keithley2k.cpp \
-    lockin7270.cpp
+    lockin7270.cpp \
+    daqlakeshoremag.cpp
 
 HEADERS  += utilsweep.h \
     agilentsweeper.h \
@@ -27,7 +28,8 @@ HEADERS  += utilsweep.h \
     lockin7265.h \
     lockin7270.h \
     ni488.h \
-    NIDAQmx.h
+    NIDAQmx.h \
+    daqlakeshoremag.h
 
 FORMS    += utilsweep.ui \
     agilentsweeper.ui

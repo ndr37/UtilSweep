@@ -16,6 +16,9 @@
     <height>311</height>
    </size>
   </property>
+  <property name="features">
+   <set>QDockWidget::DockWidgetFloatable|QDockWidget::DockWidgetMovable</set>
+  </property>
   <property name="windowTitle">
    <string>Agilent Sweeper</string>
   </property>
