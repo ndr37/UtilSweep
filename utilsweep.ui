@@ -1,24 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>UtilSweep</class>
- <widget class="QMainWindow" name="UtilSweep" >
-  <property name="geometry" >
+ <widget class="QMainWindow" name="UtilSweep">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>672</width>
+    <height>439</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>UtilSweep</string>
   </property>
-  <widget class="QMenuBar" name="menuBar" />
-  <widget class="QToolBar" name="mainToolBar" />
-  <widget class="QWidget" name="centralWidget" />
-  <widget class="QStatusBar" name="statusBar" />
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QCustomPlot" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>10</y>
+      <width>511</width>
+      <height>311</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>240</width>
+      <height>240</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="sweepMainMagButton">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>340</y>
+      <width>111</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Sweep Main Magnet</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>330</y>
+      <width>181</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="spacing">
+      <number>1</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Main magnet is:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="mainMagnetComboBox"/>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>672</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuMeasurement">
+    <property name="title">
+     <string>Measurement</string>
+    </property>
+    <addaction name="action7265_Lockin_AC_volts"/>
+    <addaction name="action7270_Dual_Harminc_Mod_volts"/>
+    <addaction name="actionKeithley_2k_DC_volts"/>
+   </widget>
+   <widget class="QMenu" name="menuSources">
+    <property name="title">
+     <string>Sources</string>
+    </property>
+    <addaction name="actionAgilent_RF_Sweeper"/>
+    <addaction name="actionYoko_source_V_for_gate"/>
+    <addaction name="actionYoko_source_V_with_ref_R_for_I"/>
+    <addaction name="actionYoko_source_I"/>
+    <addaction name="actionProjected_field_motion"/>
+   </widget>
+   <addaction name="menuMeasurement"/>
+   <addaction name="menuSources"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="action7265_Lockin_AC_volts">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>7265 Lockin AC volts</string>
+   </property>
+  </action>
+  <action name="action7270_Dual_Harminc_Mod_volts">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>7270 Dual Harminc/Mod volts</string>
+   </property>
+  </action>
+  <action name="actionKeithley_2k_DC_volts">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Keithley 2k DC volts</string>
+   </property>
+  </action>
+  <action name="actionAgilent_RF_Sweeper">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Agilent RF Sweeper</string>
+   </property>
+  </action>
+  <action name="actionYoko_source_V_for_gate">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Yoko source V for gate</string>
+   </property>
+  </action>
+  <action name="actionYoko_source_V_with_ref_R_for_I">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Yoko source V with ref R for I</string>
+   </property>
+  </action>
+  <action name="actionYoko_source_I">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Yoko source I</string>
+   </property>
+  </action>
+  <action name="actionProjected_field_motion">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Projected field motion</string>
+   </property>
+  </action>
  </widget>
- <layoutDefault spacing="6" margin="11" />
- <pixmapfunction></pixmapfunction>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header>qcustomplot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>actionAgilent_RF_Sweeper</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>UtilSweep</receiver>
+   <slot>initializeAgligentSweeper(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>335</x>
+     <y>219</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>initializeAgligentSweeper(bool)</slot>
+  <slot>initialize7270(bool)</slot>
+  <slot>initialize7265(bool)</slot>
+  <slot>initializeKeithly2k(bool)</slot>
+ </slots>
 </ui>

@@ -2,6 +2,11 @@
 #define UTILSWEEP_H
 
 #include <QMainWindow>
+//#include <QDockWidget>
+#include "agilentsweeper.h"
+#include "lockin7270.h"
+#include "lockin7265.h"
+#include "keithley2k.h"
 
 namespace Ui {
 class UtilSweep;
@@ -15,8 +20,19 @@ public:
     explicit UtilSweep(QWidget *parent = 0);
     ~UtilSweep();
 
+private slots:
+    void on_sweepMainMagButton_clicked();
+    void initializeAgligentSweeper(bool state);
+    void initialize7270(bool state);
+    void initialize7265(bool state);
+    void initializeKeithley2k(bool state);
+
 private:
     Ui::UtilSweep *ui;
+    AgilentSweeper *sweeper;
+    Lockin7270 *dual_lockin;
+    Lockin7265 *single_lockin;
+    Keithley2k *keithley;
 };
 
 #endif // UTILSWEEP_H

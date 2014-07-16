@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui webkit
+QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 
@@ -15,25 +15,22 @@ TEMPLATE = app
 SOURCES += main.cpp\
         utilsweep.cpp \
     agilentsweeper.cpp \
-    qcustomplot.cpp \
-    lockin7265.cpp \
-    keithley2k.cpp \
-    lockin7270.cpp
+    qcustomplot.cpp
 
 HEADERS  += utilsweep.h \
     agilentsweeper.h \
     qcustomplot.h \
-    keithley2k.h \
-    lockin7265.h \
-    lockin7270.h \
     ni488.h \
-    NIDAQmx.h
+    NIDAQmx.h \
+    lockin7265.h \
+    keithley2k.h \
+    lockin7270.h
 
 FORMS    += utilsweep.ui \
     agilentsweeper.ui
 
-win32: LIBS += -L$$PWD/ -lNIDAQmx
-LIBS += $$PWD/libgpib.a
-
-INCLUDEPATH += $$PWD/
-DEPENDPATH += $$PWD/
+OTHER_FILES += \
+    gpib-32.dll \
+    NIDAQmx.lib \
+    libgpib.a \
+    .gitattributes
